@@ -137,7 +137,7 @@ table {
 }
 .header,
 .footer {
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
   position: relative;
 }
@@ -204,9 +204,7 @@ table {
 }
 .keymessage-container {
   width: 100%;
-  border-bottom: 1px solid #cfcbda;
-  float: right;
-  background-color: #FBFBFB;
+  margin-bottom: 10px;
 }
 .keymessage-container h3 {
   color: #46505f;
@@ -215,7 +213,6 @@ table {
   color: orange;
   width: 1000px;
   margin: 0 auto;
-  text-align: center;
   font-size: 1.4em;
   line-height: 45px;
 }
@@ -223,7 +220,8 @@ table {
   margin: auto;
   width: 200px;
   border-top: 1px solid #dee3e6;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 .container {
   width: 940px;
@@ -246,17 +244,18 @@ table {
   margin-bottom: 5px;
 }
 .container p {
-  max-width: 600px;
-  line-height: 24px;
+  max-width: 650px;
+  line-height: 28px;
 }
 .container-body {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 20px;
 }
 .container-body .container {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   padding-bottom: 10px;
 }
 body {
@@ -264,6 +263,22 @@ body {
   font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   color: #111;
+}
+.hubesco {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dee3e6;
+  margin-top: 0px;
+  padding-top: 20px;
+}
+.hubesco img {
+  left: 20px;
+  right: initial;
+}
+.hubesco .description {
+  float: right;
+}
+.hubesco .container p {
+  max-width: 700px;
 }
 .detail-block {
   background-color: #f8f8f8;
