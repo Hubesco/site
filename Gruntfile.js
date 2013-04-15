@@ -34,6 +34,9 @@ module.exports = function (grunt) {
       production: {
         files: {
           'public/css/style.css': 'public/css/style.less'
+        },
+        options: {
+          yuicompress: true
         }
       }
     },
