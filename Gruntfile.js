@@ -41,12 +41,12 @@ module.exports = function (grunt) {
       }
     },
     watch: {
-      scripts: {
+      options: {
+          interrupt: false
+      },
+      less: {
         files: ['**/*.less'],
-        tasks: ['less'],
-        options: {
-          nospawn: true
-        }
+        tasks: ['less']
       }
     }
   });

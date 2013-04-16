@@ -1,23 +1,26 @@
-
+// Imports
 @import "reset";
+@import "definitions";
 @import "bootstrap/bootstrap";
 
 .navbar-wrap{
   height: 60px;
-  background-color: #262829;
-  color: #EEE;
-  border-bottom: 1px solid #dee3e6;
+  background-color: @dark-background-color;
+  color: @header-font-color;
+  border-bottom: 1px solid @separator-color;
   border-radius: 0px;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
 }
 .header, .footer{
-  width: 1200px;
+  line-height: 20px;
+  width: 85%;
   margin: 0 auto;
+  top: 20px;
   position: relative;
   h1, nav, p{
-    top: 17px;
-    position: relative;
+    position: absolute;
+    top: 20;
   }
   a{
     text-decoration: none;
@@ -25,25 +28,25 @@
     &:hover{
       color: #FFF;
     }
-    h1{
-      position: absolute;
-      margin: 0;
-      font-family: "Roboto Condensed", Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.6em;
-      .com{
-        color: #777;
-      }
-      .beta{
-        color: rgb(255, 165, 0);
-        font-size: 0.5em;
-        font-style: italic;
-        margin-left: 1px;
-        vertical-align: baseline;
-        text-shadow: 0px 1px 1px #555;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      }
+  .logo{
+    position: absolute;
+    margin: 0;
+    font-family: @title-font;
+    font-weight: 700;
+    font-size: 1.7em;
+    .com{
+      color: #777;
     }
+    .beta{
+      color: @orange-font-color;
+      font-size: 0.45em;
+      font-style: italic;
+      margin-left: 1px;
+      vertical-align: baseline;
+      text-shadow: 0px 1px 1px #555;
+      font-family: @beta-font;
+    }
+  }
   }
   .nav{
     right: 0;
@@ -56,12 +59,12 @@
         float: left;
         line-height: 20px;
         a{
-          padding-top: 17px;
+          //padding-top: 17px;
           margin-left: 45px;
-          color: #BBB;
-          font-size: 0.9em;
+          color: @header-link-font-color;
+          //font-size: 0.9em;
           &:hover {
-            color: #FFF;
+            color: @header-link_hover-font-color;
           }
         }
       }
@@ -70,21 +73,17 @@
 }
 .footer{
   font-size: 0.9em;
-  color: #BBB;
-  line-height: 20px;
+  //color: #BBB;
 }
 .keymessage-container {
   width: 100%;
-  //border-bottom: 1px solid #cfcbda;
-  //float: right;
-  //background-color: #FBFBFB;
   margin-bottom: 10px;
   h3{
     color: #46505f;
   }
   .keymessage{
-    color: orange;
-    width: 1000px;
+    color: @orange-font-color;
+    width: 80%;
     margin: 0 auto;
     font-size: 1.4em;
     line-height: 45px;
@@ -94,18 +93,18 @@
 .separator{
   margin: auto;
   width: 200px;
-  border-top: 1px solid #dee3e6;
+  border-top: 1px solid @separator-color;
   margin-bottom: 20px;
   margin-top: 5px;
 }
 .container{
-  width: 940px;
+  width: 65%;
   margin-right: auto;
   margin-left: auto;
   position: relative;
   img{
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 20%;
+    max-height: 70px;
     position: absolute;
     right: 30px;
     top: 0;
@@ -114,21 +113,25 @@
   }
   h3{
     font-weight: 700;
-    color: #57BCC8;
+    color: @blue-font-color;
     margin-bottom: 5px;
-    font-family: "Roboto Condensed", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: @title-font;
     font-size: 1.1em;
+    .to-come{
+      color: #BBB;
+      font-size: 0.9em;
+    }
   }
   p{
-    max-width: 650px;
+    max-width: 75%;
     line-height: 28px;
     font-size: 0.9em;
   }
   a{
-    color: orange;
+    color: @orange-font-color;
     text-decoration: none;
     &:hover{
-      color: orange;
+      color: @orange-font-color;
     }
   }
 }
@@ -144,32 +147,32 @@
   }
 }
 body{
-  background-color: #FFF;
-  font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: @background-color;
+  font-family: @main-font;
   text-rendering: optimizeLegibility;
-  color: #111;
+  color: @main-font-color;
 }
 .hubesco{
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #dee3e6; //1px solid #cfcbda;
+  background-color: @grey-background-color;
+  border-bottom: 1px solid @separator-color; //1px solid #cfcbda;
   margin-top: 0px;
   padding-top: 20px;
   img{
     left: 20px;
-    right: initial;
+    right: auto;
   }
   .description{
     float: right;
+    max-width: 80%;
   }
   .container p{
-    max-width: 700px;
+    max-width: 80%;
   }
 }
 .detail-block{
-  background-color: #f8f8f8;
+  background-color: @grey-background-color;
   padding: 25px 0px 25px 0px;
   margin: 0px;
-  background: #f4f4f4;
   border-top: 1px solid #dee3e6;
   border-radius: 0px;
   -moz-border-radius: 0px;
@@ -177,16 +180,26 @@ body{
   margin-top: 0px;
   color: #333;
   text-shadow: 1px 1px #FFF;
+  border-bottom: 1px solid @separator-color;
   h3{
-    color: #555;
+    color: @grey-font-color;
     margin-bottom: 20px;
     font-size: 1.3em;
-    font-family: "Roboto Condensed", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: @title-font;
   }
+  .container{
+    max-width: 70%;
+  }
+}
+.stick-to-footer{
+  bottom: 60px;
+  position: absolute;
+  right: 0;
+  left: 0;
 }
 .quote-wrapper {
   font-size: 0.9em;
-  width: 300px;
+  width: 33%;
   .author{
     font-weight: bold;
   }
@@ -196,6 +209,7 @@ body{
     color: #AAA;
   }
   .quote{
+    width: 90%;
     padding-left: 10px;
     padding-right: 5px;
     &:before {
@@ -212,6 +226,39 @@ body{
 .pull-left {
   float: left;
 }
-.fix{
+.pull-right {
+  float: right;
+}
+
+// Sticky footer
+html, body, .wrap {
+  height: 100%;
+}
+body > .wrap {
+  height: auto; min-height: 100%;
+}
+.main {
+  padding-bottom: 60px;
+}  /* must be same height as the footer */
+.footer {
+  margin-top: -61px; /* negative value of footer height */
+  height: 40px;
+  clear:both;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
   clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+/* Hides from IE-mac */
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
 }
