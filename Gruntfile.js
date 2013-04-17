@@ -30,14 +30,13 @@ module.exports = function (grunt) {
         ]
       }
     },
-    ,
     requirejs: {
       production: {
         options: {
-          name: 'change_password',
-          mainConfigFile: 'public/scripts/change_password.js',
+          name: 'parsley',
+          mainConfigFile: 'public/scripts/modules/parsley.js',
           optimize: 'uglify2',
-          out: 'public/scripts/change_password.min.js',
+          out: 'public/scripts/modules/parsley.min.js',
           wrap: true,
           preserveLicenseComments: false,
           optimizeAllPluginResources: true,
@@ -59,7 +58,7 @@ module.exports = function (grunt) {
     },
     watch: {
       options: {
-          interrupt: false
+        interrupt: false
       },
       less: {
         files: ['**/*.less'],
@@ -75,6 +74,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Task definition.
-  grunt.registerTask('default', ['jshint', 'less']);
+  grunt.registerTask('default', ['jshint', 'less', 'requirejs']);
 
 };

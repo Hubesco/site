@@ -20,9 +20,14 @@ body
               span.beta &beta;eta
           nav.nav
             ul
-              li: a href="#" Login
+              - if session[:username].nil?
+                li: a href="/login" Login
+              - else
+                li: a href="/home/password" Home
               li: a href="#" Pricing
               li: a href="/about" About us
+              - unless session[:username].nil?
+                li: a href="/logout" Logout
       / Content
       #content == yield
   / Footer

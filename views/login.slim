@@ -1,0 +1,29 @@
+.container.container-body.hubesco
+  / Keymessage
+  .keymessage-container
+    h2.keymessage Login
+  .container.clearfix
+    .description
+      p
+        | Please enter your credentials
+    .fix
+.container.container-body
+  .container
+    form.form-horizontal method="POST" action="/login" novalidate=true
+      .control-group
+        label.control-label for="username" Username:
+        .controls
+          input type="text" id="username" name="username" required="required" data-notblank="true" value="#{params[:username]}"
+      .control-group
+        label.control-label for="password" Password:
+        .controls
+          input type="password" id="password" name="password" required="required" data-notblank="true"
+      .control-group
+        .controls
+          button.btn type="submit" Ok
+      span.error= params[:message]
+
+script data-main='/scripts/modules/parsley.js' src='/scripts/lib/requirejs/require.js' type='text/javascript'
+
+
+
