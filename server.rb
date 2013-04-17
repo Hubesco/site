@@ -1,6 +1,7 @@
 # encoding: utf-8
 require 'sinatra'
 require 'slim'
+require 'net/ldap'
 
 set :port, 80
 set :bind, '0.0.0.0'
@@ -21,7 +22,17 @@ end
 
 # Password change process
 post '/home/password' do
-
+  
+  ldap = Net::LDAP.new
+  ldap.host = "hubesco.com"
+  ldap.port = 389
+  ldap.auth params[:username], params[:current_password]
+  if ldap.bind
+    puts "ok"
+  else
+    puts "no"
+  end
+  
 end
 
 # About page
