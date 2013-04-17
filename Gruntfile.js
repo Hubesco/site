@@ -30,6 +30,23 @@ module.exports = function (grunt) {
         ]
       }
     },
+    ,
+    requirejs: {
+      production: {
+        options: {
+          name: 'change_password',
+          mainConfigFile: 'public/scripts/change_password.js',
+          optimize: 'uglify2',
+          out: 'public/scripts/change_password.min.js',
+          wrap: true,
+          preserveLicenseComments: false,
+          optimizeAllPluginResources: true,
+          paths: {
+            jquery: 'empty:'
+          }
+        }
+      }
+    },
     less: {
       production: {
         files: {
@@ -53,6 +70,7 @@ module.exports = function (grunt) {
 
   // Load tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
