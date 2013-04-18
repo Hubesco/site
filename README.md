@@ -9,6 +9,6 @@ Hubesco's site.
 - Go to your project folder ```cd hubesco``` and install dependencies: ```npm install```
 - Build: ```grunt```
 - Download [ruby](http://www.ruby-lang.org/)
-- Install the bundle gem ````gem install bundle```
-- Go to your project folder ```cd hubesco``` and install the dependencies ````bundle install```
+- Install the bundle gem ```gem install bundle```
+- Go to your project folder ```cd hubesco``` and install the dependencies ```bundle install```
 - Launch ```ruby server.rb```
