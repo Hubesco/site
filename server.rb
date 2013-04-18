@@ -82,6 +82,11 @@ get '/about' do
   slim :about_us
 end
 
+# About page
+get '/pricing' do
+  slim :pricing
+end
+
 # Ping page
 get '/ping/?' do
   'ok'
