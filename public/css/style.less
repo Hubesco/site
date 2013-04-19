@@ -105,7 +105,7 @@
   margin-right: auto;
   margin-left: auto;
   position: relative;
-  img{
+  & > img{
     max-width: 20%;
     max-height: 70px;
     position: absolute;
@@ -243,7 +243,18 @@ body{
   float: right;
 }
 
-// Sticky footer
+.table-center{
+  td, th{
+    text-align: center;
+  }
+  .left{
+    text-align: left;
+  }
+}
+
+/*
+ * Sticky footer
+ */
 html, body, .wrap {
   height: 100%;
 }
