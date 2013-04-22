@@ -31,15 +31,20 @@ module.exports = function (grunt) {
       }
     },
     requirejs: {
-      production: {
+      options: {
+        mainConfigFile: 'public/scripts/lib/requirejs/configuration.js',
+        optimize: 'uglify2',
+        wrap: true,
+        optimizeAllPluginResources: true,
+        baseUrl: './public/scripts'
+      },
+      parsley: {
         options: {
-          name: 'parsley',
-          mainConfigFile: 'public/scripts/modules/parsley.js',
-          optimize: 'uglify2',
-          out: 'public/scripts/modules/parsley.min.js',
-          wrap: true,
-          preserveLicenseComments: false,
-          optimizeAllPluginResources: true,
+          name: 'modules/parsley-module',
+          //mainConfigFile: 'public/scripts/modules/parsley-module.js',
+          //name: 'lib/requirejs/almond-0.2.5',
+          //include: ['modules/parsley-module'],
+          out: 'public/scripts/modules/parsley-module.min.js',
           paths: {
             jquery: 'empty:'
           }
