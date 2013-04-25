@@ -51,6 +51,24 @@
     position: absolute;
     &:hover{
       cursor: pointer;
+      color: #FFF;
+    }
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      margin-right: 20px;
+      top: 50%;
+      border-style: solid;
+    }
+    &.open:after{
+      border-width:  5px 5px 0 5px ;
+      border-color:  @header-link-font-color transparent;
+    }
+    &.close:after{
+      border-width:  0 5px 5px 5px ;
+      border-color:  @header-link-font-color transparent;
     }
   }
   .navbar-wrap {
