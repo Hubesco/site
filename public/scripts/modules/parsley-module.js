@@ -1,6 +1,6 @@
 requirejs(
 
-  ['jquery', 'parsley'],
+  ['jquery', 'parsley', 'common'],
 
   function ($) {
     $(function(){

@@ -1,0 +1,293 @@
+.navbar-wrap{
+  height: 60px;
+  background-color: @dark-background-color;
+  color: @header-font-color;
+  border-bottom: 1px solid @separator-color;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+.header, .footer{
+  line-height: 20px;
+  width: 85%;
+  margin: 0 auto;
+  top: 20px;
+  position: relative;
+  h1, nav, p{
+    position: absolute;
+    top: 20;
+  }
+  nav, p{
+    font-size: 0.9em;
+  }
+  a{
+    text-decoration: none;
+    color: #EEE;
+    &:hover{
+      color: #FFF;
+    }
+  .logo{
+    position: absolute;
+    margin: 0;
+    font-family: @title-font;
+    font-weight: 700;
+    font-size: 1.7em;
+    .com{
+      color: #777;
+    }
+    .beta{
+      color: @orange-font-color;
+      font-size: 0.45em;
+      font-style: italic;
+      margin-left: 1px;
+      vertical-align: baseline;
+      text-shadow: 0px 1px 1px #555;
+      font-family: @beta-font;
+    }
+  }
+  }
+  .nav{
+    right: 0;
+    position: absolute;
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li{
+        float: left;
+        line-height: 20px;
+        a{
+          //padding-top: 17px;
+          margin-left: 45px;
+          color: @header-link-font-color;
+          //font-size: 0.9em;
+          &:hover {
+            color: @header-link_hover-font-color;
+          }
+        }
+      }
+    }
+    &.menu{
+      display: none;
+    }
+  }
+}
+.sqt_badge{
+  margin-left: 20px;
+  vertical-align: middle;
+  height: 15px;
+}
+.keymessage-container {
+  width: 100%;
+  margin-bottom: 10px;
+  h3{
+    color: #46505f;
+  }
+  .keymessage{
+    color: @orange-font-color;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.4em;
+    line-height: 45px;
+    font-weight: 700;
+  }
+}
+.nodescription{
+  margin-bottom: 10px;
+}
+.separator{
+  margin: auto;
+  width: 200px;
+  border-top: 1px solid @separator-color;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.container{
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  & > img{
+    max-width: 20%;
+    max-height: 70px;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+    margin:auto;
+  }
+  h3{
+    font-weight: 700;
+    color: @blue-font-color;
+    margin-bottom: 5px;
+    font-family: @title-font;
+    font-size: 1.1em;
+    .to-come{
+      color: #BBB;
+      font-size: 0.9em;
+    }
+  }
+  p{
+    max-width: 75%;
+    line-height: 28px;
+    font-size: 0.9em;
+  }
+  table{
+    font-size: 0.9em;
+  }
+  a{
+    color: @orange-font-color;
+    text-decoration: none;
+    &:hover{
+      color: @orange-font-color;
+    }
+  }
+}
+.container-body{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  .container{
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+  }
+}
+body{
+  background-color: @background-color;
+  font-family: @main-font;
+  text-rendering: optimizeLegibility;
+  color: @main-font-color;
+}
+.hubesco{
+  background-color: @grey-background-color;
+  border-bottom: 1px solid @separator-color; //1px solid #cfcbda;
+  margin-top: 0px;
+  padding-top: 20px;
+  img{
+    left: 20px;
+    right: auto;
+  }
+  .description{
+    float: right;
+    max-width: 80%;
+  }
+  .container p{
+    max-width: 80%;
+  }
+}
+.small-header{
+  padding-top: 10px;
+  margin-bottom: 10px;
+  .description{
+    float: none;
+  }
+  .container{
+    margin-bottom: 20px;
+  }
+}
+.detail-block{
+  background-color: @grey-background-color;
+  padding: 25px 0px 25px 0px;
+  margin: 0px;
+  border-top: 1px solid #dee3e6;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  margin-top: 0px;
+  color: #333;
+  text-shadow: 1px 1px #FFF;
+  border-bottom: 1px solid @separator-color;
+  h3{
+    color: @grey-font-color;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-family: @title-font;
+  }
+  .container{
+    max-width: 70%;
+  }
+}
+.stick-to-footer{
+  bottom: 60px;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+.quote-wrapper {
+  font-size: 0.9em;
+  width: 33%;
+  .author{
+    font-weight: bold;
+  }
+  .company{
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #AAA;
+  }
+  .quote{
+    width: 90%;
+    padding-left: 10px;
+    padding-right: 5px;
+    &:before {
+      display: block;
+      content: "\201C";
+      font-size: 1em;
+      position: relative;
+      left: -7px;
+      top: 10px;
+      color: #7a7a7a;
+    }
+  }
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+.table-center{
+  td, th{
+    text-align: center;
+  }
+  .left{
+    text-align: left;
+  }
+}
+
+/*
+ * Sticky footer
+ */
+html, body, .wrap {
+  height: 100%;
+}
+body > .wrap {
+  height: auto; min-height: 100%;
+}
+.main {
+  padding-bottom: 60px;
+}  /* must be same height as the footer */
+.footer {
+  margin-top: -61px; /* negative value of footer height */
+  height: 40px;
+  clear:both;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+/* Hides from IE-mac */
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}

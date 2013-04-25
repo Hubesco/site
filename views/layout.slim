@@ -12,22 +12,27 @@ body
     .main.clearfix
       .navbar-wrap
         header.header
-          a href="/"
-            h1.logo
-              | hubesco
-              span.com .com
-              | &#32;
-              span.beta &beta;eta
-          nav.nav
-            ul
-              - if session[:username].nil?
-                li: a href="/login" Login
-              - else
-                li: a href="/home/password" Home
-              li: a href="/pricing" Pricing
-              li: a href="/about" About us
-              - unless session[:username].nil?
-                li: a href="/logout" Logout
+          .navwrap
+            a href="/"
+              h1.logo
+                | hubesco
+                span.com .com
+                | &#32;
+                span.beta &beta;eta
+            p#menu.menu.nav Menu
+          .navwrap#second
+            nav#nav.nav
+              ul
+                - if session[:username].nil?
+                  li: a href="/login" Login
+                - else
+                  li: a href="/home/password" Home
+                li: a href="/mail" Mail
+                li: a href="/owncloud" Cloud
+                li: a href="/pricing" Pricing
+                li: a href="/about" About us
+                - unless session[:username].nil?
+                  li: a href="/logout" Logout
       / Content
       #content == yield
   / Footer
@@ -36,7 +41,8 @@ body
       p
         | Supported by&#32;
         a href="http://www.sarbotte-designs.com" Sarbotte Designs
-        img.sqt_badge src="//www.sarbotte-designs.com/sqt/badge/http%3A%2F%2Fwww.hubesco.com/2"
+        img.sqt_badge src="http://www.sarbotte-designs.com/images/badges/sqt/png/sqt_100.png"
+        / img.sqt_badge src="//www.sarbotte-designs.com/sqt/badge/http%3A%2F%2Fwww.hubesco.com/2"
       nav.nav
         ul
           li: a href="mailto:contact@hubesco.com" Contact us
