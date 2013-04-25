@@ -52,6 +52,9 @@
     &:hover{
       cursor: pointer;
       color: #FFF;
+      &:after{
+        border-color:  darken(#FFF, 30%) transparent;
+      }
     }
     &:after {
       content: "";
@@ -61,14 +64,13 @@
       margin-right: 20px;
       top: 50%;
       border-style: solid;
+      border-color:  darken(@header-link-font-color, 30%) transparent;
     }
     &.open:after{
       border-width:  5px 5px 0 5px ;
-      border-color:  @header-link-font-color transparent;
     }
     &.close:after{
       border-width:  0 5px 5px 5px ;
-      border-color:  @header-link-font-color transparent;
     }
   }
   .navbar-wrap {
