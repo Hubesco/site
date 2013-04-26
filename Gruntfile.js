@@ -30,35 +30,51 @@ module.exports = function (grunt) {
         ]
       }
     },
+    uglify: {
+      compress: {
+        files: {
+          'public/scripts/build/lib/requirejs/require.js': 'public/scripts/lib/requirejs/require.js',
+          'public/scripts/build/html5shiv.js': 'public/scripts/html5shiv.js'
+        }
+      }
+    },
     requirejs: {
       options: {
         mainConfigFile: 'public/scripts/lib/requirejs/configuration.js',
         optimize: 'uglify2',
         wrap: true,
         optimizeAllPluginResources: true,
-        baseUrl: './public/scripts'
-      },
-      parsley: {
-        options: {
-          name: 'modules/parsley-module',
-          //mainConfigFile: 'public/scripts/modules/parsley-module.js',
-          //name: 'lib/requirejs/almond-0.2.5',
-          //include: ['modules/parsley-module'],
-          out: 'public/scripts/modules/parsley-module.min.js',
-          paths: {
-            jquery: 'empty:'
-          }
+        baseUrl: './public/scripts',
+        include: 'lib/requirejs/configuration',
+        paths: {
+          jquery: 'empty:'
         }
+      },
+      password: {
+        options: { name: 'pages/password', out: 'public/scripts/build/pages/password.js' }
+      },
+      login: {
+        options: { name: 'pages/login', out: 'public/scripts/build/pages/login.js' }
+      },
+      index: {
+        options: { name: 'pages/index', out: 'public/scripts/build/pages/index.js' }
+      },
+      about: {
+        options: { name: 'pages/about', out: 'public/scripts/build/pages/about.js' }
+      },
+      pricing: {
+        options: { name: 'pages/pricing', out: 'public/scripts/build/pages/pricing.js' }
       }
     },
     less: {
       production: {
-        files: {
-          'public/css/style.css': 'public/css/style.less'
-        },
+        files: { 'public/css/style.css': 'public/css/style.less' },
         options: {
           yuicompress: true
         }
+      },
+      dev: {
+        files: { 'public/css/style.css': 'public/css/style.less' }
       }
     },
     watch: {
@@ -68,8 +84,13 @@ module.exports = function (grunt) {
       less: {
         files: ['**/*.less'],
         tasks: ['less']
+      },
+      require: {
+        files: ['**/*.js'],
+        tasks: ['clean', 'requirejs']
       }
-    }
+    },
+    clean: ['public/scripts/build']
   });
 
   // Load tasks.
@@ -77,8 +98,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Task definition.
-  grunt.registerTask('default', ['jshint', 'less', 'requirejs']);
+  grunt.registerTask('default', ['jshint', 'clean', 'less:production', 'uglify', 'requirejs']);
 
 };

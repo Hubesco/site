@@ -1,0 +1,9 @@
+requirejs(
+
+  ['common', 'validation'],
+
+  function () {
+
+  }
+
+);
