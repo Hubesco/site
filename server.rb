@@ -27,7 +27,7 @@ get '/?' do
 end
 
 # Password change page
-get '/home/password' do
+get '/home/password/?' do
   redirect '/login' if session[:username].nil?
   slim :change_password
 end
@@ -54,7 +54,7 @@ post '/home/password' do
 end
 
 #login
-get '/login' do
+get '/login/?' do
   slim :login
 end
 
@@ -72,24 +72,33 @@ post '/login' do
   redirect "/login?message=#{URI.escape(message)}&username=#{URI.encode(params[:username])}"
 end
 
-get '/logout' do
+get '/logout/?' do
   session.clear
   redirect '/'
 end
 
 # About page
-get '/about' do
+get '/about/?' do
   slim :about_us
 end
 
 # About page
-get '/pricing' do
+get '/pricing/?' do
   slim :pricing
 end
 
 # Ping page
 get '/ping/?' do
   'ok'
+end
+
+# Redirects
+get '/mail/?' do
+  redirect "https://mail.hubesco.com"
+end
+
+get '/cloud/?' do
+  redirect "https://cloud.hubesco.com"
 end
 
 # 404
