@@ -1,11 +1,10 @@
-doctype 5
-html
+doctype html
 head
+  title= locals[:title] || 'Hubesco'
   /[if lt IE 9]
     script src="public/scripts/build/html5shiv.js"
   link href="//fonts.googleapis.com/css?family=Roboto+Condensed:700|Open+Sans:400,700" rel="stylesheet" type="text/css"
   link href="/css/style.css" rel="stylesheet" type="text/css"
-  title= locals[:title] || 'Hubesco'
 body
   .wrap
     / Header
