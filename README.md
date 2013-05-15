@@ -7,7 +7,7 @@ Hubesco's site.
 - Download [nodejs](http://nodejs.org/download/)
 - Clone the repo: ```git clone https://nicompte@bitbucket.org/nicompte/hubesco-site.git hubesco```
 - Go to your project folder ```cd hubesco``` and install dependencies: ```npm install```
-- Install the grunt cli ```npm isntall -g grunt-cli```
+- Install the grunt cli ```npm install -g grunt-cli```
 - Build: ```grunt```
 - Download [ruby](http://www.ruby-lang.org/)
 - Install the bundle gem ```gem install bundle```
