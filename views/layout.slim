@@ -26,8 +26,9 @@ body
                   li: a href="/login" Login
                 - else
                   li: a href="/home/password" Home
-                li: a href="https://mail.hubesco.com" Mail
-                li: a href="https://cloud.hubesco.com" Cloud
+                li: a href="https://mail.hubesco.com" target="_blank" Mail
+                li: a href="https://cloud.hubesco.com" target="_blank" Cloud
+                li: a href="http://autoblog.hubesco.com" target="_blank" Autoblog
                 li: a href="/about" About us
                 - unless session[:username].nil?
                   li: a href="/logout" Logout
