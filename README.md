@@ -1,4 +1,4 @@
-# Hubesco [![Build Status](https://travis-ci.org/Hubesco/site.png?branch=dev)](https://travis-ci.org/SarbotteDesigns/site) [![Dependency Status](https://gemnasium.com/Hubesco/site.png)](https://gemnasium.com/Hubesco/site)
+# Hubesco [![Build Status](https://travis-ci.org/Hubesco/site.png?branch=dev,master)](https://travis-ci.org/SarbotteDesigns/site) [![Dependency Status](https://gemnasium.com/Hubesco/site.png)](https://gemnasium.com/Hubesco/site)
 Hubesco's site.
 
 ## Build
