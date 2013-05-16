@@ -1,4 +1,4 @@
-# Hubesco
+# Hubesco [![Build Status](https://travis-ci.org/Hubesco/site.png?branch=dev)](https://travis-ci.org/SarbotteDesigns/site)
 
 Hubesco's site.
 
