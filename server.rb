@@ -16,6 +16,8 @@ enable :sessions
 
 set :port, 80
 set :bind, '0.0.0.0'
+set :show_exceptions, false
+set :raise_errors, false
 
 before do
   content_type :html, 'charset' => 'utf-8'
@@ -26,15 +28,24 @@ get '/?' do
   slim :index
 end
 
+before '/home*' do
+  redirect '/login' if session[:username].nil?
+end
+
+before '/admin*' do
+  redirect '/login' if session[:username].nil?
+  if session[:admin].nil?
+    halt 403
+  end
+end
+
 # Password change page
 get '/home/password/?' do
-  redirect '/login' if session[:username].nil?
-  slim :change_password
+  slim :"home/change_password"
 end
 
 # Password change process
 post '/home/password' do
-  redirect '/login' if session[:username].nil?
   ldap = Net::LDAP.new
   ldap.host = "hubesco.com"
   ldap.port = 389
@@ -101,12 +112,29 @@ get '/cloud/?' do
   redirect "https://cloud.hubesco.com"
 end
 
-# 404
-not_found do
-  'Page not found'
+# Admin
+get '/admin/?' do
+  slim :"admin/index"
 end
 
-# Error
+get '/admin/users/?' do
+  slim :"admin/users"
+end
+
+get '/admin/services/?' do
+  slim :"admin/services"
+end
+
+# Error handling
+
+not_found do
+  slim :"error/hmmm"
+end
+
+error 403 do
+  slim :"error/forbidden"
+end
+
 error do
-  'Erreur - ' + env['sinatra.error'].name
+  slim :"error/generic", :locals => {:error => env['sinatra.error']}
 end
