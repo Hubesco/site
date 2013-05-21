@@ -4,14 +4,6 @@ require 'sinatra'
 require 'slim'
 require 'net/ldap'
 
-=begin
-use Rack::Session::Cookie, :key => 'rack.session',
-                           :domain => 'localhost',
-                           :path => '/',
-                           :expire_after => 2592000, # In seconds
-                           :secret => 'hubesco'
-=end
-
 enable :sessions
 
 set :port, 80
@@ -29,13 +21,13 @@ get '/?' do
 end
 
 before '/home*' do
-  redirect '/login' if session[:username].nil?
+  redirect "/login?redirect=#{request.fullpath}" if session[:username].nil?
 end
 
 before '/admin*' do
   redirect '/login' if session[:username].nil?
   if session[:admin].nil?
-    halt 403
+    #halt 403
   end
 end
 
@@ -74,13 +66,15 @@ post '/login' do
   ldap.host = "hubesco.com"
   ldap.port = 389
   ldap.auth "uid=#{params[:username]},ou=People,dc=hubesco,dc=com", params[:password]
+  params[:redirect] = params[:redirect] || '/'
   if ldap.bind
     session[:username] = params[:username]
-    redirect "/"
+    session[:ldap] = ldap
+    redirect params[:redirect]
   else
     message = "Could not match user and password."
   end
-  redirect "/login?message=#{URI.escape(message)}&username=#{URI.encode(params[:username])}"
+  redirect "/login?message=#{URI.escape(message)}&username=#{URI.encode(params[:username])}&redirect=#{params[:redirect]}"
 end
 
 get '/logout/?' do
@@ -118,7 +112,10 @@ get '/admin/?' do
 end
 
 get '/admin/users/?' do
-  slim :"admin/users"
+  filter = Net::LDAP::Filter.eq("objectClass","person")
+  treebase = "dc=hubesco, dc=com"
+  result = session[:ldap].search(:base => treebase, :filter => filter)
+  slim :"admin/users", :locals=> {:users => result}
 end
 
 get '/admin/services/?' do

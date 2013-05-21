@@ -7,13 +7,14 @@
     table.table
       thead
         tr
-          th Username
+          th Nom
+          th Uid
           th Actions
-      tr
-        td paolo.escobar
-        td actions
-      tr
-        td n.barbotte
-        td actions
+      - for user in locals[:users]
+        tr
+          td = user[:cn][0]
+          td = user[:uid][0]
+          td: button.btn Delete
   .container
     button.btn Add
+
