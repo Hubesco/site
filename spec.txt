@@ -1,0 +1,25 @@
+
+Visitor accesses
+  home page (FAILED - 1)
+  login page
+  about page
+
+Visitor signs up
+  with valid email and password
+  with invalid email
+  with blank password
+
+Failures:
+
+  1) Visitor accesses home page
+     Failure/Error: page.should have_link('Autoblog', :href=>'https://autoblog.hubesco.com')
+     Capybara::ExpectationNotMet:
+       expected to find link "Autoblog" but there were no matches. Also found "Autoblog", which matched the selector but not all filters.
+     # ./spec/home_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+Finished in 0.39702 seconds
+6 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/home_spec.rb:5 # Visitor accesses home page

@@ -15,6 +15,8 @@ def app
   Sinatra::Application
 end
 
+$vars = YAML.load_file("spec/config.yml")
+
 Capybara.app = app
 
 RSpec.configure do |config|
