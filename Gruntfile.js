@@ -103,5 +103,6 @@ module.exports = function (grunt) {
 
   // Task definition.
   grunt.registerTask('default', ['jshint', 'clean', 'less:production', 'uglify', 'requirejs']);
+  grunt.registerTask('travis', ['jshint', 'clean', 'less:production', 'uglify', 'requirejs']);
 
 };
