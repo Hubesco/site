@@ -23,25 +23,26 @@ body
             nav#nav.nav
               ul
                 - if session[:username].nil?
-                  li: a href="/login" Login
+                  li: a href="/login" =t("menu.login")
                 - else
-                  li: a href="/home/password" Home
-                li: a href="https://mail.hubesco.com" target="_blank" Mail
-                li: a href="https://cloud.hubesco.com" target="_blank" Cloud
-                li: a href="https://autoblog.hubesco.com" target="_blank" Autoblog
-                li: a href="/about" About us
+                  li: a href="/home/password" =t("menu.home")
+                li: a href="https://mail.hubesco.com" target="_blank" =t("menu.mail")
+                li: a href="https://cloud.hubesco.com" target="_blank" =t("menu.cloud")
+                li: a href="https://autoblog.hubesco.com" target="_blank" =t("menu.autoblog")
+                li: a href="/about" =t("menu.about_us")
                 - unless session[:username].nil?
-                  li: a href="/logout" Logout
+                  li: a href="/logout" =t("menu.logout")
       / Content
       #content == yield
   / Footer
   .navbar-wrap.footer-wrap
     footer.footer
       p
-        | Supported by&#32;
+        =t('menu.supported_by')
+        | &#32;
         a href="http://www.sarbotte-designs.com" Sarbotte Designs
         img.sqt_badge src="/images/sqt_100.png"
         / img.sqt_badge src="//www.sarbotte-designs.com/sqt/badge/http%3A%2F%2Fwww.hubesco.com/2"
       nav.nav
         ul
-          li: a href="mailto:paolo.escobar@hubesco.com" Contact us
+          li: a href="mailto:paolo.escobar@hubesco.com" =t('common.contact_us')

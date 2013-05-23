@@ -1,21 +1,20 @@
 .container.container-body.hubesco.small-header
   / Keymessage
   .keymessage-container
-    h2.keymessage Login
+    h2.keymessage =t('login.title')
   .container.clearfix
     .description
-      p
-        | Please enter your credentials
+      p =t('login.description')
     .fix
 .container.container-body
   .container
     form.form-horizontal method="POST" action="/login" novalidate=true
       .control-group
-        label.control-label for="username" Username:
+        label.control-label for="username" =t('login.username')
         .controls
           input type="text" id="username" name="username" required="required" data-notblank="true" value="#{params[:username]}"
       .control-group
-        label.control-label for="password" Password:
+        label.control-label for="password" =t('login.password')
         .controls
           input type="password" id="password" name="password" required="required" data-notblank="true"
       .control-group

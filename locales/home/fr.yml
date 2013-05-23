@@ -1,0 +1,38 @@
+fr:
+  common:
+    see_more: En savoir plus
+    to_come: à venir
+    contact_us: Contactez-nous
+  menu:
+    login: Connexion
+    mail: Mail
+    cloud: Cloud
+    autoblog: Autoblog
+    about_us: À propos
+    logout: Déconnexion
+    home: Home
+    supported_by: Supporté par
+  content:
+    hubesco:
+      title: Hubesco
+      goal: "Hubesco aims to participate in the decentralization of the Internet by providing necessary services for today's digital identity. This hub of service provides an alternative to large corporations and proprietary products based on credible open source solutions."
+      contribute: "Hubesco is foremost a community which listens to its users. Want to contribute? See a new service? Propose improvements? Participate financially? Do not hesitate to"
+      contact_us: contact us
+      moto: "Master your data. Know who you entrust. Own your own data."
+    roundcube:
+      title: Roundcube
+      goal: "Rouncube est un client mail IMAP multilingue pour navigateur avec une interace semblable à une application. Il fournit toutes les fonctionnalités que vous attendez d'un client mail, y compris le support MIME, un carnet d'adresse, les répertoires, la recherche de messages et la correction orthographique."
+    owncloud:
+      title: Owncloud
+      goal: "Owncloud vous donne un accès universel à vos fichiers via une interface web ou WebDAV. Il fournit également une plateforme pour facilement voir et synchroniser vos contacts, calendriers et marque pages sur tous vos XXX, et permet une édition basique sur le web. L'installation demande peu de resources serveur, ne demande pas de persmissions spécifiques et est rapide. Owncloud est extensible via une API simple mais puissante pour des applications ou extensions."
+    git:
+      title: Git
+      goal: "Git est un outils de versionnement gratuit et open source qui vous permet de tout gérer avec vitesse et efficacité, que ce soit un petit ou un large projet."
+    they_use_it:
+      title: "Ils l'utilisent"
+  login:
+    title: Authentification
+    description: Veuillez entrer vos identifiants
+    username: "Nom d'utilisateur : "
+    password: "Mot de passe : "
+

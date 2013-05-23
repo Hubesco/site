@@ -3,6 +3,8 @@ require 'bundler/setup'
 require 'sinatra'
 require 'slim'
 require 'net/ldap'
+require 'i18n'
+require 'i18n/backend/fallbacks'
 
 =begin
 use Rack::Session::Cookie, :key => 'rack.session',
@@ -17,8 +19,32 @@ enable :sessions
 set :port, 80
 set :bind, '0.0.0.0'
 
+configure do
+  I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+  I18n.load_path += Dir[File.join(settings.root, 'locales', '*/*.yml')]
+  I18n.backend.load_translations
+end
+
+helpers do
+  def get_locale
+    # Pulls the browser's language
+    # @env["HTTP_ACCEPT_LANGUAGE"][0,2]
+  end
+
+  def t(*args)
+    # Just a simple alias
+    I18n.t(*args)
+  end
+end
+
 before do
   content_type :html, 'charset' => 'utf-8'
+end
+
+before '/:locale?/*' do
+  puts "------------------- SPLATS: #{params[:splat ]}"
+  I18n.locale = params[:locale] if params[:locale]
+  request.path_info = '/' + params[:splat][0]
 end
 
 # Main page

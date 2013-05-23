@@ -6,49 +6,51 @@
   .container.clearfix
     img src="/images/hubesco_logo.png"
     .description
-      h3 Hubesco
+      h3 =t('content.hubesco.title')
       div
+         p =t('content.hubesco.goal')
          p
-           | Hubesco aims to participate in the decentralization of the Internet by providing necessary services for today's digital identity. This hub of service provides an alternative to large corporations and proprietary products based on credible open source solutions.
-         p
-           | Hubesco is foremost a community which listens to its users. Want to contribute? See a new service? Propose improvements? Participate financially? Do not hesitate to&#32;
-           a href="mailto:paolo.escobar@hubesco.com" contact us
-           | .
-         p
-           | Master your data. Know who you entrust. Own your own data.
+          =t('content.hubesco.contribute')
+          | &#32;
+          a href="mailto:paolo.escobar@hubesco.com" =t('content.hubesco.contact_us')
+          | .
+         p =t('content.hubesco.moto')
 / Main content
 .container.container-body
   .container
     img src="/images/roundcube_logo.png"
-    h3
-      | Roundcube
+    h3 =t('content.roundcube.title')
     p
-      | Roundcube webmail is a browser-based multilingual IMAP client with an application-like user interface. It provides full functionality you expect from an e-mail client, including MIME support, address book, folder manipulation, message searching and spell checking.&#32;
-      a href="http://roundcube.net/" target="_blank" See more
+      =t('content.roundcube.goal')
+      | &#32;
+      a href="http://roundcube.net/" target="_blank" =t('common.see_more')
       | .
   .separator
   .container
     img src="/images/owncloud_logo.png"
-    h3
-      | Owncloud
+    h3 =t('content.owncloud.title')
     p
-      | OwnCloud gives you universal access to your files through a web interface or WebDAV. It also provides a platform to easily view & sync your contacts, calendars and bookmarks across all your devices and enables basic editing right on the web. Installation has minimal server requirements, doesn&apos;t need special permissions and is quick. ownCloud is extendable via a simple but powerful API for applications and plugins.&#32;
-      a href="http://owncloud.org/" target="_blank" See more
+      =t('content.owncloud.goal')
+      | &#32;
+      a href="http://owncloud.org/" target="_blank" =t('common.see_more')
       | .
   .separator
   .container
     img src="/images/git_logo.png"
     h3
-      | Git
-      span.to-come &#32;- to come
+      =t('content.git.title')
+      span.to-come
+        | &#32;-&#32;
+        =t('common.to_come')
     p
-      | Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.&#32;
-      a href="http://git-scm.com/" target="_blank" See more
+      =t('content.git.goal')
+      | &#32;
+      a href="http://git-scm.com/" target="_blank" =t('common.see_more')
       | .
 / Testify
 .detail-block
   .container.clearfix
-    h3 They use it
+    h3 =t('content.they_use_it.title')
     .pull-left.quote-wrapper
       .author Nicolas Barbotte
       .company Sarbotte Designs
