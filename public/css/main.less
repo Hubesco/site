@@ -1,3 +1,12 @@
+// Bootstrap customization
+.form-horizontal .control-label {
+  font-size: 1em;
+  font-weight: 200;
+}
+.table th, .table td {
+  font-size: 1.1em;
+}
+
 .navbar-wrap{
   height: 60px;
   background-color: @dark-background-color;
@@ -14,6 +23,7 @@
   top: 20px;
   position: relative;
   h1, nav, p{
+    font-weight: 200;
     position: absolute;
     top: 20;
   }
@@ -57,10 +67,10 @@
         float: left;
         line-height: 20px;
         a{
-          //padding-top: 17px;
-          margin-left: 45px;
+          margin-left: 40px;
           color: @header-link-font-color;
-          //font-size: 0.9em;
+          font-weight: 200;
+          font-size: 1.1em;
           &:hover {
             color: @header-link_hover-font-color;
           }
@@ -129,7 +139,7 @@
   }
   p{
     max-width: 75%;
-    line-height: 28px;
+    line-height: 25px;
     font-weight: 200;
     font-size: 1.1em;
   }
@@ -156,6 +166,7 @@
   }
 }
 body{
+  font-weight: 200;
   background-color: @background-color;
   font-family: @main-font;
   text-rendering: optimizeLegibility;
