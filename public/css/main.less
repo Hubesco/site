@@ -32,7 +32,7 @@
   }
   a{
     text-decoration: none;
-    color: #EEE;
+    color: #222;
     &:hover{
       color: #FFF;
     }
@@ -42,6 +42,7 @@
     font-family: @title-font;
     font-weight: 700;
     font-size: 1.7em;
+    color: black;
     .com{
       color: #777;
     }
@@ -69,7 +70,7 @@
         a{
           margin-left: 40px;
           color: @header-link-font-color;
-          font-weight: 200;
+          font-weight: 400;
           font-size: 1.1em;
           &:hover {
             color: @header-link_hover-font-color;
@@ -149,6 +150,7 @@
   a{
     color: @orange-font-color;
     text-decoration: none;
+    font-weight: 400;
     &:hover{
       color: @orange-font-color;
     }
@@ -189,6 +191,10 @@ body{
     max-width: 90%;
     font-weight: 200;
     font-size: 1.1em;
+    color: white;
+  }
+  h3{
+    color: white;
   }
 }
 .small-header{
@@ -284,9 +290,14 @@ body > .wrap {
   padding-bottom: 60px;
 }  /* must be same height as the footer */
 .footer {
-  margin-top: -61px; /* negative value of footer height */
+  border-top: solid 1px @separator-color;
+  padding-top: 10px;
+  margin-top: -51px; /* negative value of footer height */
   height: 40px;
   clear:both;
+}
+.footer-wrap{
+  border-bottom: none;
 }
 .clearfix:after {
   content: ".";
