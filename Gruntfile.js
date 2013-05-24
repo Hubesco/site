@@ -64,11 +64,17 @@ module.exports = function (grunt) {
       },
       pricing: {
         options: { name: 'pages/pricing', out: 'public/scripts/build/pages/pricing.js' }
+      },
+      test: {
+        options: { name: 'pages/test', out: 'public/scripts/build/pages/test.js' }
       }
     },
     less: {
       production: {
-        files: { 'public/css/style.css': 'public/css/style.less' },
+        files: {
+          'public/css/style.css': 'public/css/style.less',
+          'public/css/prism.css': 'public/css/prism.less'
+        },
         options: {
           yuicompress: true
         }

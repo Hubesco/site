@@ -136,3 +136,8 @@ end
 error do
   'Erreur - ' + env['sinatra.error'].name
 end
+
+# Tests
+get '/test/?' do
+  slim :test
+end

@@ -3,6 +3,7 @@ require.config({
   paths: {
     jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min',
     parsley: 'lib/jquery/parsley',
+    prism: 'lib/prism/prism',
     validation: 'modules/validation',
     common: 'modules/common'
   }
