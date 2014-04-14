@@ -1,5 +1,6 @@
 source :rubygems
-ruby "1.9.3"
-gem 'sinatra', '1.4.2'
-gem 'slim', '1.3.8'
+ruby "2.1.1"
+gem 'sinatra', '1.4.4'
+gem 'slim', '2.0.2'
 gem 'net-ldap', :git => 'https://github.com/ruby-ldap/ruby-net-ldap.git'
+gem 'thin', '1.6.2'
