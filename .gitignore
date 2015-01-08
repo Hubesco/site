@@ -6,3 +6,4 @@ Gemfile.lock
 *.min.js
 vendor
 public/scripts/build
+tmp
